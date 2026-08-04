@@ -74,14 +74,14 @@ const workDefinitions: WorkDefinition[] = [
     title: text("Smart Targets\nTraining Application", "Приложение для тренировки по умным мишеням"),
     mobileTitle: text("Smart Targets\nTraining Application", "Умные мишени\nдля тренировок"),
     tags: {
-      en: ["Sport Tech", "Design System", "UX"],
-      ru: ["Sport Tech", "Дизайн-система", "UX"],
+      en: ["Mobile App", "IOT", "Tokens & Variables UI", "JTBD"],
+      ru: ["Mobile App", "IOT", "Tokens & Variables UI", "JTBD"],
     },
     impact: [
-      { value: "2 mm", label: text("Shot coordinate accuracy across target zones", "Точность координат выстрела по зонам мишени") },
-      { value: "24/24", label: text("Hits visible in a single training session", "Попадания, видимые в одной тренировочной сессии") },
+      { value: "2", label: text("Types of IOT-targets have their own interface layer", "Типа IOT-мишеней со своим интерфейсным слоем") },
+      { value: "-86%", label: text("The time spent analyzing the shooting decreased", "Время на анализ стрельбы сократилось") },
+      { value: "2mm", label: text("Shot coordinate accuracy across target zones", "Точность координат выстрела по зонам мишени") },
       { value: "<1 s", label: text("Feedback from impact to interface", "От попадания до обратной связи в интерфейсе") },
-      { value: "4", label: text("Training modes composed from one system", "Режима тренировки в рамках одной системы") },
     ],
     impactStatement: text("Every shot becomes immediate, readable feedback.", "Каждый выстрел превращается в мгновенную и понятную обратную связь."),
     storyEyebrow: text("Real-time Experience", "Опыт в реальном времени"),
@@ -1007,6 +1007,1047 @@ function WorkImage({
   );
 }
 
+type CaseMetric = {
+  value: string;
+  label: LocalizedText;
+};
+
+type CaseTextBlock = {
+  eyebrow: LocalizedText;
+  title: LocalizedText;
+  copy?: LocalizedText;
+};
+
+const smartTargetsAssets = {
+  hero: "/portfolio/smart-targets/hero.png",
+  grain: "/portfolio/smart-targets/grain.png",
+  grainDark: "/portfolio/smart-targets/grain-dark.png",
+  projectCore: "/portfolio/smart-targets/project-core.png",
+  projectCoreFigma: "/portfolio/smart-targets/project-core-figma.png",
+  discoveryJelena: "/portfolio/smart-targets/discovery-jelena.png",
+  discoverySerg: "/portfolio/smart-targets/discovery-serg.png",
+  discoveryDmitry: "/portfolio/smart-targets/discovery-dmitry.png",
+  keyDecisionSeparateMode: "/portfolio/smart-targets/key-decision-separate-mode.png",
+  keyDecisionShootingLog: "/portfolio/smart-targets/key-decision-shooting-log.png",
+  keyDecisionTrainerMode: "/portfolio/smart-targets/key-decision-trainer-mode.png",
+  keyDecisionLiveTraining: "/portfolio/smart-targets/key-decision-live-training.png",
+  keyDecisionPostTrainingSummary: "/portfolio/smart-targets/key-decision-post-training-summary.png",
+  keyDecisionPostTrainingDetails: "/portfolio/smart-targets/key-decision-post-training-details.png",
+  outcomeHero: "/portfolio/smart-targets/outcome-hero.png",
+  outcomeFinalGraphic: "/portfolio/smart-targets/outcome-final-graphic.png",
+  deviceBack: "/portfolio/smart-targets/device-back.png",
+  deviceA: "/portfolio/smart-targets/device-screen-a.png",
+  deviceB: "/portfolio/smart-targets/device-screen-b.png",
+  deviceC: "/portfolio/smart-targets/device-screen-c.png",
+  deviceD: "/portfolio/smart-targets/device-screen-d.png",
+  deviceE: "/portfolio/smart-targets/device-screen-e.png",
+};
+
+const smartTargetsImpact: CaseMetric[] = [
+  { value: "2", label: text("Types of IOT-targets have their own interface layer", "Типа IOT-мишеней со своим интерфейсным слоем") },
+  { value: "-86%", label: text("The time spent analyzing the shooting decreased", "Время на анализ стрельбы сократилось") },
+  { value: "2mm", label: text("Shot coordinate accuracy across target zones", "Точность координат выстрела по зонам мишени") },
+  { value: "<1 s", label: text("Feedback from hardware to interface", "Обратная связь от оборудования к интерфейсу") },
+];
+
+const smartTargetsFinalImpact: CaseMetric[] = [
+  { value: "-57%", label: text("Task Completion Time\nActive Training", "Время выполнения задачи\nActive Training") },
+  { value: "-50%", label: text("Interpretation Errors\nActive Training", "Ошибки интерпретации\nActive Training") },
+  { value: "4/4", label: text("Actionable Insights Identified\nPost-Training Analysis", "Практические выводы найдены\nPost-Training Analysis") },
+  { value: "100%", label: text("Analysis Tasks Completed\nPost-Training Analysis", "Аналитические задачи завершены\nPost-Training Analysis") },
+];
+
+const smartTargetsOutcome = {
+  eyebrow: text("Outcome", "Outcome"),
+  title: text("The right information, at the right moment.", "Правильная информация в правильный момент."),
+  copyBefore: text(
+    "The key insight was that shooters don't need less information - ",
+    "Ключевой вывод: стрелкам не нужно меньше информации - ",
+  ),
+  copyStrong: text(
+    "they need the right information at the right moment.",
+    "им нужна правильная информация в правильный момент.",
+  ),
+  copyAfter: text(
+    "During active training, a focused stream of critical real-time data reduces cognitive load and helps shooters stay in the flow. Once the session ends, the context changes: with attention no longer divided, the shooter can engage with a richer layer of data to understand performance and identify areas for improvement.\n\nThe resulting experience supports a continuous loop:",
+    "Во время активной тренировки сфокусированный поток критичных real-time данных снижает когнитивную нагрузку и помогает стрелкам оставаться в потоке. Когда сессия завершена, контекст меняется: внимание больше не разделено, и стрелок может работать с более глубоким слоем данных, чтобы понять результат и зоны роста.\n\nИтоговый опыт поддерживает непрерывный цикл:",
+  ),
+  loop: text("FOCUS → PERFORM → REVIEW → LEARN → IMPROVE", "FOCUS → PERFORM → REVIEW → LEARN → IMPROVE"),
+};
+
+const smartTargetsReflection = {
+  eyebrow: text("Reflection", "Reflection"),
+  title: text("Information density should follow the user's cognitive state.", "Плотность информации должна следовать когнитивному состоянию пользователя."),
+  copy: text(
+    "This shifted my approach from designing individual screens to designing a context-aware information system that supports the full training loop.",
+    "Это сместило мой подход от проектирования отдельных экранов к контекстной информационной системе, которая поддерживает полный тренировочный цикл.",
+  ),
+};
+
+const smartTargetsRoleRows = [
+  {
+    label: text("Responsibility", "Ответственность"),
+    body: text(
+      "User scenario generation; information architecture; interactive prototypes; visual system; components and states; delivery of the solution to developers.",
+      "Пользовательские сценарии; информационная архитектура; интерактивные прототипы; визуальная система; компоненты и состояния; передача решения разработчикам.",
+    ),
+  },
+  {
+    label: text("In Team", "В команде"),
+    body: text(
+      "Identifying technical limitations; Training mode logic; Telemetry accuracy testing; MVP prioritization.",
+      "Выявление технических ограничений; логика тренировочного режима; тестирование точности телеметрии; приоритизация MVP.",
+    ),
+  },
+];
+
+const smartTargetsMetaRows = [
+  { label: text("Scope", "Объём"), value: text("Research, UX, UI, Design System", "Research, UX, UI, Design System") },
+  { label: text("Team", "Команда"), value: text("PM, Engineers, Hardware", "PM, Engineers, Hardware") },
+  { label: text("Duration", "Длительность"), value: text("12 months", "12 месяцев") },
+  { label: text("Status", "Статус"), value: text("Launched", "Запущено") },
+];
+
+const smartTargetsSteps = [
+  {
+    number: "01",
+    eyebrow: text("Challenge", "Вызов"),
+    copy: text(
+      "Complex target's data was difficult to interpret during active session - split shots, bullet velocity, flight angle and impact coordinates.",
+      "Сложные данные мишени было трудно интерпретировать во время активной сессии: сплиты, скорость пули, угол полёта и координаты попадания.",
+    ),
+  },
+  {
+    number: "02",
+    eyebrow: text("My Contribution", "Мой вклад"),
+    copy: text(
+      "I analyzed the IPSC shooting methodology, developed a model of interaction within the key rules, designed the main data flows and created a scalable interface system.",
+      "Я проанализировал методологию IPSC, разработал модель взаимодействия в рамках ключевых правил, спроектировал основные потоки данных и масштабируемую интерфейсную систему.",
+    ),
+  },
+  {
+    number: "03",
+    eyebrow: text("Outcome", "Результат"),
+    copy: text(
+      "One environment connected session setup, live feedback and post-training analysis.",
+      "Единая среда связала настройку сессии, live-обратную связь и анализ после тренировки.",
+    ),
+  },
+];
+
+const smartTargetsProjectCore = {
+  eyebrow: text("Project Core", "Ядро проекта"),
+  title: text("From complex hardware telemetry to fast readable action", "От сложной телеметрии оборудования к быстрым и понятным действиям"),
+  copy: text(
+    "A Smart Targets Training Application - that turns target telemetry into immediate, readable feedback during live shooting sessions.",
+    "Приложение Smart Targets превращает телеметрию мишени в мгновенную и понятную обратную связь во время live-тренировок.",
+  ),
+  points: smartTargetsSteps,
+};
+
+const smartTargetsDiscovery = {
+  eyebrow: text("Discovery", "Discovery"),
+  title: text("Interview. Analysis. Hypothesis.", "Interview. Analysis. Hypothesis."),
+  copy: text(
+    "Initial assumptions were based on stakeholder interviews and domain analysis. Field testing was planned for the next phase of product development.",
+    "Первичные предположения строились на интервью со стейкхолдерами и анализе предметной области. Полевое тестирование было запланировано на следующую фазу развития продукта.",
+  ),
+  methodEyebrow: text("Discovery / Version 1", "Discovery / Version 1"),
+  methodTitle: text("Jobs to Be Done", "Jobs to Be Done"),
+  methodCopy: text(
+    "Based on JTBD interviews with a small group of competitive IPSC shooters, three primary triggers for developing the initial product hypotheses were identified:",
+    "На базе JTBD-интервью с небольшой группой соревнующихся IPSC-стрелков были выявлены три ключевых триггера для формирования первых продуктовых гипотез:",
+  ),
+};
+
+const smartTargetsDiscoveryQuotes = [
+  {
+    avatar: smartTargetsAssets.discoveryJelena,
+    name: "Jelena Davies",
+    role: text("Trainer in practical IPSC-shooting", "Тренер по практической IPSC-стрельбе"),
+    quote: text(
+      "The desire to reduce cognitive load during training",
+      "Желание снизить когнитивную нагрузку во время тренировки",
+    ),
+  },
+  {
+    avatar: smartTargetsAssets.discoverySerg,
+    name: "Serg Terentev",
+    role: text("A practicing sniper, 30+ years of experience", "Практикующий снайпер, опыт 30+ лет"),
+    quote: text(
+      "Reduce overall training time by receiving all necessary telemetry on a phone",
+      "Сократить общее время тренировки, получая всю необходимую телеметрию на телефоне",
+    ),
+  },
+  {
+    avatar: smartTargetsAssets.discoveryDmitry,
+    name: "Dmitry Fedoseev",
+    role: text("IPSC shooter and bloger, Gun Gun Style", "IPSC-стрелок и блогер, Gun Gun Style"),
+    quote: text(
+      "The desire to improve shooting performance, and multitool setting",
+      "Желание улучшать результативность стрельбы и гибко настраивать инструмент",
+    ),
+  },
+];
+
+const smartTargetsKeyDecisionOne = {
+  eyebrow: text("Key Decision 01", "Ключевое решение 01"),
+  title: text("Separate action from analysis.", "Разделить действие и анализ."),
+  copy: text(
+    "From the initial interview session, right through to the field research, it became clear that shooters value both real-time telemetry and the shooting log. Therefore, the decision was made to design the first version of the main screen as separate modules: the main screen with the target scoreboard, the main target telemetry, and the shooting log with detailed telemetry and shooting calculations. The ability to switch modes was also added, with a focus on the shooting log.",
+    "От первых интервью до полевого исследования стало понятно, что стрелкам важны и live-телеметрия, и журнал стрельбы. Поэтому первая версия главного экрана была разделена на модули: экран с табло мишени, основная телеметрия мишени и журнал стрельбы с детальными расчетами. Также была добавлена возможность переключать режимы с акцентом на shooting log.",
+  ),
+};
+
+const smartTargetsKeyDecisionVisuals = [
+  {
+    label: text("Separate Mode", "Separate Mode"),
+    image: smartTargetsAssets.keyDecisionSeparateMode,
+  },
+  {
+    label: text("Shooting Log Mode", "Shooting Log Mode"),
+    image: smartTargetsAssets.keyDecisionShootingLog,
+  },
+];
+
+const smartTargetsKeyDecisionValidation = {
+  title: text("The first hierarchy was wrong.", "Первая иерархия оказалась неверной."),
+  copy: text(
+    "Field research revealed a clear need to re-prioritize the hierarchy of displayed data, shifting the focus from the shooting log to live telemetry - what's happening in the moment.",
+    "Полевое исследование показало необходимость пересобрать иерархию данных: сместить фокус с журнала стрельбы на live-телеметрию — то, что происходит в моменте.",
+  ),
+  cardEyebrow: text("Validation / Version 2", "Validation / Version 2"),
+  cardTitle: text("Field Research", "Field Research"),
+  hypothesisTitle: text("Hypothesis", "Hypothesis"),
+  hypothesisCopy: text(
+    "The user considers the indicator important, but does not actually notice it in the interface. I adapted the presentation of information to the actual user behavior.",
+    "Пользователь считает показатель важным, но фактически не замечает его в интерфейсе. Я адаптировал подачу информации под реальное поведение пользователя.",
+  ),
+  hypothesisResult: text(
+    "Version 2 should allow users to find important educational information faster and with less effort.",
+    "Version 2 должна помочь пользователям находить важную тренировочную информацию быстрее и с меньшими усилиями.",
+  ),
+  targetTitle: text("Target Group", "Target Group"),
+};
+
+const smartTargetsTargetGroup = [
+  {
+    label: "Participant 01 / IPSC Coach",
+    copy: text(
+      "Understand overall training performance and identify areas for improvement",
+      "Понять общую эффективность тренировки и зоны для улучшения",
+    ),
+  },
+  {
+    label: "Participant 02 / Precision / Long-range Shooter",
+    copy: text(
+      "Analyze technical performance and identify deviations in shot results.",
+      "Проанализировать техническое выполнение и выявить отклонения в результатах выстрелов.",
+    ),
+  },
+  {
+    label: "Participant 03 / Regular IPSC shooter",
+    copy: text(
+      "Quickly understand current performance and session results.",
+      "Быстро понять текущую эффективность и результаты сессии.",
+    ),
+  },
+];
+
+const smartTargetsFieldStages = [
+  {
+    label: text("Baseline", "Baseline"),
+    items: [
+      {
+        eyebrow: "Task 1",
+        copy: text(
+          "\"You're conducting a training session as a shooter/coach. Tell us about the process, the structure, what's going on, and the results.\"",
+          "\"Вы проводите тренировку как стрелок/тренер. Расскажите о процессе, структуре, происходящем и результатах.\"",
+        ),
+      },
+      {
+        eyebrow: "Research",
+        copy: text(
+          "Time to first correct answer; Number of errors; Number of follow-up questions; Which elements the user notices first.",
+          "Время до первого правильного ответа; количество ошибок; количество уточняющих вопросов; элементы, которые пользователь замечает первыми.",
+        ),
+      },
+    ],
+  },
+  {
+    label: text("Information Retrieval Tasks", "Information Retrieval Tasks"),
+    items: [
+      {
+        eyebrow: "Task 01 - Findability",
+        copy: text("\"Which type of data performed best?\"", "\"Какой тип данных показал лучший результат?\""),
+      },
+      {
+        eyebrow: "Task 02 - Anomaly",
+        copy: text("\"Which type of data requires attention?\"", "\"Какой тип данных требует внимания?\""),
+      },
+      {
+        eyebrow: "Task 02 - Comparison",
+        copy: text("\"What is the main difference between Version 1 and Version 2?\"", "\"В чем главное отличие Version 1 от Version 2?\""),
+      },
+    ],
+  },
+  {
+    label: text("Qualitative Interview", "Qualitative Interview"),
+    items: [
+      { eyebrow: "Q1", copy: text("\"How easy was it to understand the information on this screen?\"", "\"Насколько легко было понять информацию на этом экране?\"") },
+      { eyebrow: "Q2", copy: text("\"How confident are you that you understood the situation correctly?\"", "\"Насколько вы уверены, что правильно поняли ситуацию?\"") },
+      { eyebrow: "Q3", copy: text("\"What did you notice first?\"", "\"Что вы заметили первым?\"") },
+      { eyebrow: "Q4", copy: text("\"What information was difficult to find?\"", "\"Какую информацию было трудно найти?\"") },
+      { eyebrow: "Q5", copy: text("\"What information did you expect to see but didn't notice immediately?\"", "\"Какую информацию вы ожидали увидеть, но не заметили сразу?\"") },
+    ],
+  },
+];
+
+const smartTargetsUxDecision = {
+  label: text("UX Decision", "UX Decision"),
+  copy: text(
+    "Version 2 improved information findability and comprehension, allowing users to identify critical training data faster and with greater confidence. A decision was made to divide the main training screen into two data models:",
+    "Version 2 улучшила нахождение и понимание информации, позволяя пользователям быстрее и увереннее определять критичные тренировочные данные. Было принято решение разделить главный тренировочный экран на две модели данных:",
+  ),
+  items: [
+      {
+        eyebrow: "01 - Trainer Mode",
+        emphasis: "Observe → Analysis → Adjust",
+        copy: text(
+          "Observe → Analysis → Adjust. An integrated data model that enables the supervising coach to analyze performance and adjust the shooter's behavior in real time during training.",
+          "Observe → Analysis → Adjust. Интегрированная модель данных для тренера, которая помогает анализировать результат и корректировать поведение стрелка в реальном времени.",
+        ),
+      },
+      {
+        eyebrow: "02 - Live Training",
+        emphasis: "Act → Observe → React",
+        copy: text(
+          "Act → Observe → React. A simplified, high-priority data model focused on immediate feedback and situational awareness. Only information required to make decisions during training is surfaced.",
+          "Act → Observe → React. Упрощенная модель данных с приоритетом на мгновенную обратную связь и ситуационную осведомленность. Показывается только информация, нужная для решений во время тренировки.",
+        ),
+      },
+  ],
+};
+
+const smartTargetsKeyDecisionFinalVisuals = [
+  {
+    label: text("Trainer Mode", "Trainer Mode"),
+    image: smartTargetsAssets.keyDecisionTrainerMode,
+  },
+  {
+    label: text("Live Training", "Live Training"),
+    image: smartTargetsAssets.keyDecisionLiveTraining,
+  },
+];
+
+const smartTargetsContextRows = [
+  ["User State", "Focused"],
+  ["Environment", "Dynamic"],
+  ["Attention", "Divided"],
+  ["Time pressure", "High"],
+  ["Primary goal", "Monitor performance"],
+  ["Information need", "Critical signals"],
+  ["Information density", "Low"],
+  ["Interaction", "Glanceable"],
+  ["UI priority", "Speed"],
+];
+
+const smartTargetsContextComparisonRows = [
+  ["Context", "Live-Training"],
+  ...smartTargetsContextRows,
+];
+
+const smartTargetsResearchRows = [
+  ["Metric", "Version 1", "Version 2", "Impact"],
+  ["Task completion time", "6.0 sec", "2.6 sec", "-57%"],
+  ["Time to first correct answer", "3.5 sec", "2.5 sec", "-29%"],
+  ["Errors", "1.0", "0.5", "-50%"],
+  ["Perceived ease", "4.8 / 7", "6.0 / 7", "+25%"],
+  ["Confidence", "5.0 / 7", "6.2 / 7", "+24%"],
+];
+
+const smartTargetsKeyDecisionTwo = {
+  eyebrow: text("Key Decision 02", "Ключевое решение 02"),
+  title: text("One data source. Two cognitive contexts.", "Один источник данных. Два когнитивных контекста."),
+  copy: text(
+    "As I mentioned above, real-time data impacts performance in live shooting sessions. But it's also important for the user to subsequently monitor and record their sessions in detail. If training data has two fundamentally different moments of use - this is where the need for a context-driven data architecture.",
+    "Как уже было видно выше, real-time данные влияют на результат во время live-сессии. Но пользователю также важно позже подробно просматривать и фиксировать тренировку. Если у тренировочных данных есть два принципиально разных момента использования, возникает потребность в контекстной архитектуре данных.",
+  ),
+};
+
+const smartTargetsKeyDecisionTwoValidation = {
+  cardEyebrow: text("Validation", "Validation"),
+  cardTitle: text("Field Research", "Field Research"),
+  title: text("Concept Validation", "Concept Validation"),
+  subtitle: text("Success context mismatch", "Success context mismatch"),
+  copy: text(
+    "The first design iteration successfully matched the analytical needs identified during Field Research.\n\nThe live training interface intentionally limits information to critical real-time data. This reduces cognitive load during the session and allows the post-training experience to introduce a richer analytical layer without overwhelming the user.",
+    "Первая дизайн-итерация подтвердила аналитические потребности, выявленные во время Field Research.\n\nИнтерфейс live-тренировки намеренно ограничивает данные до критичных real-time сигналов. Это снижает когнитивную нагрузку во время сессии и позволяет post-training опыту раскрывать более глубокий аналитический слой без перегрузки пользователя.",
+  ),
+  conclusion: text(
+    "Less information during training → Better focus → More capacity for analysis after training",
+    "Меньше информации во время тренировки → больше фокуса → больше ресурса на анализ после тренировки",
+  ),
+};
+
+const smartTargetsKeyDecisionTwoHypotheses = [
+  {
+    title: text("Hypothesis - 01", "Hypothesis - 01"),
+    copy: text(
+      "Shooters don't need all training data at once. They need information progressively, according to the phase of the training session. During training, shooters need immediate signals. After training, they need context and detail.",
+      "Стрелкам не нужны все тренировочные данные сразу. Информация должна раскрываться постепенно, в зависимости от фазы тренировки: во время сессии нужны мгновенные сигналы, после сессии - контекст и детали.",
+    ),
+  },
+  {
+    title: text("Hypothesis - 02", "Hypothesis - 02"),
+    copy: text(
+      "If detailed training data is presented after the session, when the shooter is no longer under time pressure, the user can explore a richer set of metrics and derive actionable insights from the training.",
+      "Если подробные данные показывать после сессии, когда стрелок уже не находится под давлением времени, пользователь может изучать более богатый набор метрик и получать прикладные выводы из тренировки.",
+    ),
+  },
+  {
+    title: text("Research Question", "Research Question"),
+    copy: text(
+      "How do shooters make sense of their performance after a training session?",
+      "Как стрелки осмысляют свой результат после тренировочной сессии?",
+    ),
+  },
+];
+
+const smartTargetsKeyDecisionTwoTargetGroup = [
+  {
+    label: "Participant 01 / IPSC Coach",
+    copy: text("What is the first thing a shooter wants to know after a session ends?", "Что стрелок хочет понять первым после завершения сессии?"),
+  },
+  {
+    label: "Participant 02 / Precision / Long-range Shooter",
+    copy: text("What data helps him understand the result?", "Какие данные помогают ему понять результат?"),
+  },
+  {
+    label: "Participant 03 / Regular IPSC shooter",
+    copy: text("How does he move from the overall result to the details?", "Как он переходит от общего результата к деталям?"),
+  },
+  {
+    label: "Participant 04 / IPSC Amateur shooter",
+    copy: text("What data helps him make a decision about the next session?", "Какие данные помогают ему принять решение о следующей тренировке?"),
+  },
+];
+
+const smartTargetsKeyDecisionTwoStages = [
+  {
+    label: text("Observe", "Observe"),
+    items: [
+      {
+        eyebrow: "Task 1",
+        copy: text(
+          "Observe the real post-training behavior:\n\n\"Your training session is finished. Please review your results and tell me how the session went.\"",
+          "Наблюдение за реальным post-training поведением:\n\n\"Тренировочная сессия завершена. Посмотрите результаты и расскажите, как прошла тренировка.\"",
+        ),
+      },
+    ],
+  },
+  {
+    label: text("Analytical Workflow", "Analytical Workflow"),
+    items: [
+      {
+        eyebrow: "Task 1",
+        copy: text("\"Review your training session and tell me how you performed.\"", "\"Просмотрите тренировочную сессию и расскажите, как вы выступили.\""),
+      },
+      {
+        eyebrow: "Example",
+        flow: true,
+        copy: text(
+          "Overall result\n↓\nHit Factor\n↓\nTarget A vs Target B\n↓\nHit distribution\n↓\nIdentify weak area\n↓\nTraining conclusion",
+          "Общий результат\n↓\nHit Factor\n↓\nTarget A vs Target B\n↓\nРаспределение попаданий\n↓\nОпределение слабой зоны\n↓\nВывод по тренировке",
+        ),
+      },
+    ],
+  },
+  {
+    label: text("Contextual Interview", "Contextual Interview"),
+    items: [
+      { eyebrow: "Q1 - Primary Information Need", copy: text("“What did you want to understand first?”", "“Что вы хотели понять первым?”") },
+      { eyebrow: "Q2 - High-Value Metrics", copy: text("“What helped you understand your performance?”", "“Что помогло вам понять свой результат?”") },
+      { eyebrow: "Q3 - Natural Information Flow", copy: text("“What did you look at next?”", "“На что вы посмотрели дальше?”") },
+      { eyebrow: "Q4 - Information Gaps", copy: text("“Was anything missing?”", "“Чего-то не хватало?”") },
+      { eyebrow: "Q5 - Action Impact", copy: text("“What would you change in your next training session?”", "“Что бы вы изменили в следующей тренировке?”") },
+    ],
+  },
+  {
+    label: text("UX Decision", "UX Decision"),
+    items: [
+      {
+        eyebrow: "Decision",
+        copy: text(
+          "I designed two contextual data models around the user's mental state and task (progressive disclosure by training phase):",
+          "Я спроектировал две контекстные модели данных вокруг состояния пользователя и его задачи: progressive disclosure по фазам тренировки.",
+        ),
+      },
+      {
+        eyebrow: "01 - Live Training",
+        emphasis: "Act → Observe → React",
+        copy: text(
+          "Act → Observe → React. A simplified, high-priority data model focused on immediate feedback and situational awareness. Only information required to make decisions during training is surfaced.",
+          "Act → Observe → React. Упрощенная приоритетная модель для мгновенной обратной связи и ситуационной осведомленности.",
+        ),
+      },
+      {
+        eyebrow: "02 - Post-Training Analysis",
+        emphasis: "Review → Compare → Understand",
+        copy: text(
+          "Review → Compare → Understand. A richer, multidimensional data model that allows users to explore performance retrospectively, identify patterns, and understand the causes behind their results.",
+          "Review → Compare → Understand. Более глубокая многомерная модель данных для ретроспективного анализа, поиска паттернов и понимания причин результата.",
+        ),
+      },
+    ],
+  },
+];
+
+const smartTargetsKeyDecisionTwoVisuals = [
+  {
+    label: text("Post-Training Analysis", "Post-Training Analysis"),
+    image: smartTargetsAssets.keyDecisionPostTrainingSummary,
+  },
+  {
+    label: text("Post-Training Analysis", "Post-Training Analysis"),
+    image: smartTargetsAssets.keyDecisionPostTrainingDetails,
+  },
+];
+
+const smartTargetsContextComparisonFullRows = [
+  ["Context", "Live-Training", "Post-Training"],
+  ["User State", "Focused", "Relaxed"],
+  ["Environment", "Dynamic", "Stable"],
+  ["Attention", "Divided", "Available"],
+  ["Time pressure", "High", "Low"],
+  ["Primary goal", "Monitor performance", "Analyze performance"],
+  ["Information need", "Critical signals", "Full context"],
+  ["Information density", "Low", "Medium / High"],
+  ["Interaction", "Glanceable", "Exploratory"],
+  ["UI priority", "Speed", "Depth"],
+];
+
+const smartTargetsKeyDecisionTwoValidationTasks = {
+  label: text("Validation", "Validation"),
+  items: [
+    { eyebrow: "Task 1", copy: text("Tell me how your training session went.", "Расскажите, как прошла ваша тренировка.") },
+    { eyebrow: "Task 2", copy: text("Identify the area where you performed worst.", "Определите зону, где результат был хуже всего.") },
+    {
+      eyebrow: "Task 3",
+      copy: text(
+        "Based on these results, what would you focus on in your next training session?",
+        "На чем бы вы сфокусировались в следующей тренировке, опираясь на эти результаты?",
+      ),
+    },
+  ],
+};
+
+const smartTargetsKeyDecisionTwoSuccessRows = [
+  ["Success Metric", "Result"],
+  ["Participants who successfully understood their overall performance", "4/4"],
+  ["Participants who identified a specific weakness", "4/4"],
+  ["Participants who identified a clear next training focus", "4/4"],
+  ["Critical analytical tasks completed", "6/6"],
+];
+
+function SmartTargetsTable({ rows, className = "" }: { rows: string[][]; className?: string }) {
+  return (
+    <div className={`smart-case-table ${className}`.trim()} style={{ "--columns": rows[0]?.length ?? 2 } as React.CSSProperties}>
+      {rows.map((row, rowIndex) => row.map((cell, cellIndex) => (
+        <span key={`${rowIndex}-${cellIndex}`} className={rowIndex === 0 ? "is-heading" : ""}>{cell}</span>
+      )))}
+    </div>
+  );
+}
+
+function SmartTargetsRichCopy({ text, emphasis }: { text: string; emphasis?: string }) {
+  if (!emphasis || !text.startsWith(emphasis)) {
+    return <p>{text}</p>;
+  }
+
+  return (
+    <p>
+      <strong>{emphasis}</strong>
+      {text.slice(emphasis.length)}
+    </p>
+  );
+}
+
+function CaseSection({ block, locale, children }: { block: CaseTextBlock; locale: Locale; children?: React.ReactNode }) {
+  return (
+    <section className="smart-case-section">
+      <p className="smart-case-eyebrow">{block.eyebrow[locale]}</p>
+      <h2>{block.title[locale]}</h2>
+      {block.copy && <p className="smart-case-copy">{block.copy[locale]}</p>}
+      {children}
+    </section>
+  );
+}
+
+function CaseMetricGrid({
+  metrics,
+  locale,
+  tone = "light",
+}: {
+  metrics: CaseMetric[];
+  locale: Locale;
+  tone?: "light" | "dark";
+}) {
+  return (
+    <div className={`smart-case-metrics smart-case-metrics-${tone}`}>
+      {metrics.map((metric) => (
+        <article key={`${metric.value}-${metric.label.en}`}>
+          <strong>{metric.value}</strong>
+          <p>{metric.label[locale]}</p>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function SmartTargetsVisual({
+  label,
+  children,
+  dark = false,
+}: {
+  label?: string;
+  children: React.ReactNode;
+  dark?: boolean;
+}) {
+  return (
+    <figure className={`smart-case-visual ${dark ? "is-dark" : ""}`}>
+      {label && <figcaption>{label}</figcaption>}
+      <div>{children}</div>
+    </figure>
+  );
+}
+
+function SmartTargetsPhones({
+  label,
+  screens,
+}: {
+  label: string;
+  screens: string[];
+}) {
+  return (
+    <SmartTargetsVisual label={label} dark>
+      <div className={`smart-phone-stage phone-count-${screens.length}`}>
+        {screens.map((screen, screenIndex) => (
+          <div className="smart-phone" key={screen}>
+            <img className="smart-phone-back" src={smartTargetsAssets.deviceBack} alt="" loading="lazy" />
+            <img className="smart-phone-screen" src={screen} alt="" loading="lazy" />
+            <span aria-hidden="true">{screenIndex + 1}</span>
+          </div>
+        ))}
+      </div>
+    </SmartTargetsVisual>
+  );
+}
+
+function CaseProjectCore({ locale }: { locale: Locale }) {
+  return (
+    <section className="smart-case-project-core">
+      <figure className="smart-case-project-core-media">
+        <img src={smartTargetsAssets.projectCoreFigma} alt="" loading="lazy" />
+      </figure>
+
+      <header className="smart-case-project-core-intro">
+        <p className="smart-case-eyebrow">{smartTargetsProjectCore.eyebrow[locale]}</p>
+        <h2>{smartTargetsProjectCore.title[locale]}</h2>
+        <p>{smartTargetsProjectCore.copy[locale]}</p>
+      </header>
+
+      <div className="smart-case-project-core-list">
+        {smartTargetsProjectCore.points.map((point) => (
+          <article key={point.number}>
+            <div>
+              <p className="smart-case-eyebrow">{point.eyebrow[locale]}</p>
+              <p>{point.copy[locale]}</p>
+            </div>
+            <strong>{point.number}</strong>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function CaseDiscovery({ locale }: { locale: Locale }) {
+  return (
+    <section className="smart-case-discovery">
+      <header className="smart-case-discovery-intro">
+        <p className="smart-case-eyebrow">{smartTargetsDiscovery.eyebrow[locale]}</p>
+        <h2>{smartTargetsDiscovery.title[locale]}</h2>
+        <p>{smartTargetsDiscovery.copy[locale]}</p>
+      </header>
+
+      <div className="smart-case-discovery-panel">
+        <div className="smart-case-discovery-panel-copy">
+          <p className="smart-case-eyebrow">{smartTargetsDiscovery.methodEyebrow[locale]}</p>
+          <h3>{smartTargetsDiscovery.methodTitle[locale]}</h3>
+          <p>{smartTargetsDiscovery.methodCopy[locale]}</p>
+        </div>
+
+        <div className="smart-case-discovery-quotes">
+          {smartTargetsDiscoveryQuotes.map((item) => (
+            <article key={item.name}>
+              <div>
+                <img src={item.avatar} alt="" loading="lazy" />
+                <div>
+                  <strong>{item.name}</strong>
+                  <span>{item.role[locale]}</span>
+                </div>
+              </div>
+              <p>“{item.quote[locale]}”</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CaseKeyDecisionOne({ locale }: { locale: Locale }) {
+  return (
+    <section className="smart-case-key-decision">
+      <header className="smart-case-key-decision-intro">
+        <p className="smart-case-eyebrow">{smartTargetsKeyDecisionOne.eyebrow[locale]}</p>
+        <h2>{smartTargetsKeyDecisionOne.title[locale]}</h2>
+        <p>{smartTargetsKeyDecisionOne.copy[locale]}</p>
+      </header>
+
+      <div className="smart-case-key-visuals">
+        {smartTargetsKeyDecisionVisuals.map((visual) => (
+          <figure key={visual.label.en}>
+            <figcaption>{visual.label[locale]}</figcaption>
+            <img src={visual.image} alt="" loading="lazy" />
+          </figure>
+        ))}
+      </div>
+
+      <section className="smart-case-validation">
+        <header>
+          <h3>{smartTargetsKeyDecisionValidation.title[locale]}</h3>
+          <p>{smartTargetsKeyDecisionValidation.copy[locale]}</p>
+        </header>
+
+        <SmartTargetsTable rows={smartTargetsContextComparisonRows} />
+
+        <div className="smart-case-validation-panel">
+          <div className="smart-case-validation-panel-head">
+            <p className="smart-case-eyebrow">{smartTargetsKeyDecisionValidation.cardEyebrow[locale]}</p>
+            <h3>{smartTargetsKeyDecisionValidation.cardTitle[locale]}</h3>
+          </div>
+
+          <div className="smart-case-dark-grid">
+            <article>
+              <h4>{smartTargetsKeyDecisionValidation.hypothesisTitle[locale]}</h4>
+              <p>{smartTargetsKeyDecisionValidation.hypothesisCopy[locale]}</p>
+              <p>{smartTargetsKeyDecisionValidation.hypothesisResult[locale]}</p>
+            </article>
+
+            <article>
+              <h4>{smartTargetsKeyDecisionValidation.targetTitle[locale]}</h4>
+              {smartTargetsTargetGroup.map((item) => (
+                <div key={item.label}>
+                  <span>{item.label}</span>
+                  <p>{item.copy[locale]}</p>
+                </div>
+              ))}
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="smart-case-field-research">
+        <header>
+          <p className="smart-case-eyebrow">{locale === "ru" ? "Field Research" : "Field Research"}</p>
+          <h3>{locale === "ru" ? "Stages Version 1 & Version 2" : "Stages Version 1 & Version 2"}</h3>
+        </header>
+
+        <div className="smart-case-row-list smart-case-field-stages">
+          {smartTargetsFieldStages.map((stage) => (
+            <div className="smart-case-row" key={stage.label.en}>
+              <span>{stage.label[locale]}</span>
+              <div>
+                {stage.items.map((item) => (
+                  <article key={item.eyebrow}>
+                    <p className="smart-case-pill">{item.eyebrow}</p>
+                    {stage.label.en === "Analytical Workflow" && item.eyebrow === "Example" ? (
+                      <p className="smart-case-flow">{item.copy[locale]}</p>
+                    ) : (
+                      <p>{item.copy[locale]}</p>
+                    )}
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="smart-case-field-result">
+          <header>
+            <p className="smart-case-eyebrow">{locale === "ru" ? "Field Research" : "Field Research"}</p>
+            <h3>{locale === "ru" ? "Result" : "Result"}</h3>
+          </header>
+          <SmartTargetsTable rows={smartTargetsResearchRows} />
+        </div>
+
+        <div className="smart-case-row smart-case-ux-decision">
+          <span>{smartTargetsUxDecision.label[locale]}</span>
+          <div>
+            <p>{smartTargetsUxDecision.copy[locale]}</p>
+            {smartTargetsUxDecision.items.map((item) => (
+              <article key={item.eyebrow}>
+                <p className="smart-case-pill">{item.eyebrow}</p>
+                <SmartTargetsRichCopy text={item.copy[locale]} emphasis={item.emphasis} />
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="smart-case-key-visuals">
+        {smartTargetsKeyDecisionFinalVisuals.map((visual) => (
+          <figure key={visual.label.en}>
+            <figcaption>{visual.label[locale]}</figcaption>
+            <img src={visual.image} alt="" loading="lazy" />
+          </figure>
+        ))}
+      </div>
+
+      <section className="smart-case-effect smart-case-key-effect">
+        <p className="smart-case-eyebrow">{locale === "ru" ? "Effect" : "Effect"}</p>
+        <strong>-57%</strong>
+        <h2>{locale === "ru" ? "Task Completion Time" : "Task Completion Time"}</h2>
+        <p>{locale === "ru" ? "Participants completed the information interpretation task 57% faster with Version 2." : "Participants completed the information interpretation task 57% faster with Version 2."}</p>
+        <div className="smart-case-pills">
+          <span>{locale === "ru" ? "-50% Interpretation Errors" : "-50% Interpretation Errors"}</span>
+          <span>{locale === "ru" ? "+24% Confidence in Interpretation" : "+24% Confidence in Interpretation"}</span>
+        </div>
+      </section>
+    </section>
+  );
+}
+
+function CaseKeyDecisionTwo({ locale }: { locale: Locale }) {
+  return (
+    <section className="smart-case-key-decision smart-case-key-decision-two">
+      <header className="smart-case-key-decision-intro">
+        <p className="smart-case-eyebrow">{smartTargetsKeyDecisionTwo.eyebrow[locale]}</p>
+        <h2>{smartTargetsKeyDecisionTwo.title[locale]}</h2>
+        <p>{smartTargetsKeyDecisionTwo.copy[locale]}</p>
+      </header>
+
+      <div className="smart-case-validation-panel smart-case-context-panel">
+        <div className="smart-case-validation-panel-head">
+          <p className="smart-case-eyebrow">{smartTargetsKeyDecisionTwoValidation.cardEyebrow[locale]}</p>
+          <h3>{smartTargetsKeyDecisionTwoValidation.cardTitle[locale]}</h3>
+        </div>
+
+        <div className="smart-case-dark-grid">
+          {smartTargetsKeyDecisionTwoHypotheses.map((item) => (
+            <article key={item.title.en}>
+              <h4>{item.title[locale]}</h4>
+              <p>{item.copy[locale]}</p>
+            </article>
+          ))}
+
+          <article>
+            <h4>{locale === "ru" ? "Target Group" : "Target Group"}</h4>
+            {smartTargetsKeyDecisionTwoTargetGroup.map((item) => (
+              <div key={item.label}>
+                <span>{item.label}</span>
+                <p>{item.copy[locale]}</p>
+              </div>
+            ))}
+          </article>
+        </div>
+      </div>
+
+      <section className="smart-case-field-research">
+        <header>
+          <p className="smart-case-eyebrow">{locale === "ru" ? "Field Research" : "Field Research"}</p>
+          <h3>{locale === "ru" ? "Stages" : "Stages"}</h3>
+        </header>
+
+        <div className="smart-case-row-list smart-case-field-stages smart-case-field-stages-long">
+          {smartTargetsKeyDecisionTwoStages.map((stage) => (
+            <div className="smart-case-row" key={stage.label.en}>
+              <span>{stage.label[locale]}</span>
+              <div>
+                {stage.items.map((item) => (
+                  <article key={item.eyebrow}>
+                    <p className="smart-case-pill">{item.eyebrow}</p>
+                    {item.flow ? (
+                      <p className="smart-case-flow">{item.copy[locale]}</p>
+                    ) : (
+                      <SmartTargetsRichCopy text={item.copy[locale]} emphasis={item.emphasis} />
+                    )}
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="smart-case-key-visuals">
+        {smartTargetsKeyDecisionTwoVisuals.map((visual, visualIndex) => (
+          <figure key={`${visual.label.en}-${visualIndex}`}>
+            <figcaption>{visual.label[locale]}</figcaption>
+            <img src={visual.image} alt="" loading="lazy" />
+          </figure>
+        ))}
+      </div>
+
+      <section className="smart-case-validation smart-case-concept-validation">
+        <header>
+          <p className="smart-case-eyebrow">{smartTargetsKeyDecisionTwoValidation.title[locale]}</p>
+          <h3>{smartTargetsKeyDecisionTwoValidation.subtitle[locale]}</h3>
+        </header>
+
+        <SmartTargetsTable rows={smartTargetsContextComparisonFullRows} className="smart-case-context-table" />
+
+        <div className="smart-case-concept-copy">
+          <p>{smartTargetsKeyDecisionTwoValidation.copy[locale]}</p>
+          <strong>{smartTargetsKeyDecisionTwoValidation.conclusion[locale]}</strong>
+        </div>
+      </section>
+
+      <section className="smart-case-field-research smart-case-validation-result">
+        <div className="smart-case-row smart-case-ux-decision">
+          <span>{smartTargetsKeyDecisionTwoValidationTasks.label[locale]}</span>
+          <div>
+            {smartTargetsKeyDecisionTwoValidationTasks.items.map((item) => (
+              <article key={item.eyebrow}>
+                <p className="smart-case-pill">{item.eyebrow}</p>
+                <p>{item.copy[locale]}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <SmartTargetsTable rows={smartTargetsKeyDecisionTwoSuccessRows} />
+      </section>
+
+      <section className="smart-case-effect smart-case-key-effect">
+        <p className="smart-case-eyebrow">{locale === "ru" ? "Effect" : "Effect"}</p>
+        <strong>4/4</strong>
+        <h2>{locale === "ru" ? "Shooters turned training data into an actionable insight" : "Shooters turned training data into an actionable insight"}</h2>
+        <p>
+          {locale === "ru"
+            ? "All participants were able to review their performance, identify a specific weakness and define a clear focus for their next training session."
+            : "All participants were able to review their performance, identify a specific weakness and define a clear focus for their next training session."}
+        </p>
+      </section>
+    </section>
+  );
+}
+
+function CaseOutcome({ locale }: { locale: Locale }) {
+  return (
+    <section className="smart-case-outcome">
+      <figure className="smart-case-outcome-hero">
+        <img src={smartTargetsAssets.outcomeHero} alt="" loading="lazy" />
+      </figure>
+
+      <section className="smart-case-outcome-section">
+        <p className="smart-case-eyebrow">{smartTargetsOutcome.eyebrow[locale]}</p>
+        <h2>{smartTargetsOutcome.title[locale]}</h2>
+        <div className="smart-case-copy smart-case-outcome-copy">
+          <p>
+            {smartTargetsOutcome.copyBefore[locale]}
+            <strong>{smartTargetsOutcome.copyStrong[locale]}</strong>
+          </p>
+          <p>{smartTargetsOutcome.copyAfter[locale]}</p>
+        </div>
+        <p className="smart-case-loop">{smartTargetsOutcome.loop[locale]}</p>
+      </section>
+
+      <section className="smart-case-outcome-section">
+        <p className="smart-case-eyebrow">{smartTargetsReflection.eyebrow[locale]}</p>
+        <h2>{smartTargetsReflection.title[locale]}</h2>
+        <p className="smart-case-copy">{smartTargetsReflection.copy[locale]}</p>
+      </section>
+
+      <section className="smart-case-final">
+        <figure className="smart-case-final-art">
+          <img src={smartTargetsAssets.outcomeFinalGraphic} alt="" loading="lazy" />
+        </figure>
+
+        <div className="smart-case-final-content">
+          <header>
+            <p className="smart-case-eyebrow">{locale === "ru" ? "Outro" : "Outro"}</p>
+            <h2>{locale === "ru" ? "Final Impact" : "Final Impact"}</h2>
+          </header>
+          <CaseMetricGrid metrics={smartTargetsFinalImpact} locale={locale} tone="dark" />
+        </div>
+      </section>
+    </section>
+  );
+}
+
+function SmartTargetsCaseContent({ locale }: { locale: Locale }) {
+  return (
+    <div className="smart-case">
+      <CaseSection
+        locale={locale}
+        block={{
+          eyebrow: text("About", "О кейсе"),
+          title: text("Shooting training data without moving to target", "Данные тренировки без подхода к мишени"),
+          copy: text(
+            "Previously, shooters had to spend significant time reaching targets and manually analyzing results - especially in sport sniping, where targets can be up to 1,000 meters away.\n\nThe smart targets training application connects three types of smart targets: kinetic, acoustic, and contour, and transforms their telemetry into instant shooting insights, including hit zones, scores, bullet velocity, impact angle and coordinates, accuracy, and shot spacing.",
+            "Раньше стрелкам приходилось тратить значительное время на подход к мишеням и ручной анализ результатов, особенно в спортивном снайпинге, где дистанция может достигать 1000 метров.\n\nПриложение для умных мишеней соединяет три типа мишеней: кинетические, акустические и контурные, а затем превращает телеметрию в мгновенные выводы: зоны попадания, очки, скорость пули, угол и координаты попадания, точность и расстояние между выстрелами.",
+          ),
+        }}
+      />
+
+      <section className="smart-case-impact">
+        <header>
+          <p className="smart-case-eyebrow">{locale === "ru" ? "Результат" : "Outcome"}</p>
+          <h2>{locale === "ru" ? "Selected Impact" : "Selected Impact"}</h2>
+        </header>
+        <CaseMetricGrid metrics={smartTargetsImpact} locale={locale} />
+      </section>
+
+      <section className="smart-case-role">
+        <header>
+          <p className="smart-case-eyebrow">{locale === "ru" ? "Роль" : "Role"}</p>
+          <h2>{locale === "ru" ? "Lead Product Designer" : "Lead Product Designer"}</h2>
+        </header>
+        <div className="smart-case-row-list">
+          {smartTargetsRoleRows.map((row) => (
+            <div className="smart-case-row" key={row.label.en}>
+              <span>{row.label[locale]}</span>
+              <p>{row.body[locale]}</p>
+            </div>
+          ))}
+        </div>
+        <div className="smart-case-meta">
+          {smartTargetsMetaRows.map((row) => (
+            <div key={row.label.en}>
+              <span>{row.label[locale]}</span>
+              <strong>{row.value[locale]}</strong>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <CaseProjectCore locale={locale} />
+
+      <CaseDiscovery locale={locale} />
+
+      <CaseKeyDecisionOne locale={locale} />
+
+      <CaseKeyDecisionTwo locale={locale} />
+
+      <CaseOutcome locale={locale} />
+
+    </div>
+  );
+}
+
 function ProjectCard({
   work,
   index,
@@ -1079,6 +2120,7 @@ function ProjectModal({
     work: Work;
     active: boolean;
   } | null>(null);
+  const isSmartTargets = index === 1;
 
   useEffect(() => {
     if (!expanded) return;
@@ -1242,56 +2284,62 @@ function ProjectModal({
           </header>
         </div>
 
-        <section className="selected-impact">
-          <header>
-            <p>{uiCopy[locale].project.outcome}</p>
-            <h2 className="display-h1">{uiCopy[locale].project.impact[0]}<br />{uiCopy[locale].project.impact[1]}</h2>
-          </header>
-          <div className="impact-grid">
-            {work.impact.map((item) => (
-              <article key={`${item.value}-${item.label}`}>
-                <strong>{item.value}</strong>
-                <p>{item.label}</p>
-              </article>
-            ))}
-          </div>
-          <p className="impact-statement">{work.impactStatement}</p>
-        </section>
+        {isSmartTargets ? (
+          <SmartTargetsCaseContent locale={locale} />
+        ) : (
+          <>
+            <section className="selected-impact">
+              <header>
+                <p>{uiCopy[locale].project.outcome}</p>
+                <h2 className="display-h1">{uiCopy[locale].project.impact[0]}<br />{uiCopy[locale].project.impact[1]}</h2>
+              </header>
+              <div className="impact-grid">
+                {work.impact.map((item) => (
+                  <article key={`${item.value}-${item.label}`}>
+                    <strong>{item.value}</strong>
+                    <p>{item.label}</p>
+                  </article>
+                ))}
+              </div>
+              <p className="impact-statement">{work.impactStatement}</p>
+            </section>
 
-        <section className="case-story">
-          <div className="case-story-copy">
-            <p>{work.storyEyebrow}</p>
-            <h2 className="display-h1">{work.storyTitle}</h2>
-            <div>
-              <span>01</span>
-              <p>{work.storyCopy}</p>
-            </div>
-          </div>
-          <figure>
-            <WorkImage work={work} alt={`${work.title} — ${uiCopy[locale].project.storyImage}`} loading="lazy" />
-          </figure>
-        </section>
-
-        <section className="case-roadmap">
-          <header>
-            <p>{uiCopy[locale].project.roadmapEyebrow}</p>
-            <h2 className="display-h1">{uiCopy[locale].project.roadmapTitle}</h2>
-          </header>
-          <ol>
-            {work.roadmap.map((step, stepIndex) => (
-              <li key={step.title}>
-                <div className="roadmap-marker">
-                  <span>0{stepIndex + 1}</span>
-                  <i aria-hidden="true" />
-                </div>
+            <section className="case-story">
+              <div className="case-story-copy">
+                <p>{work.storyEyebrow}</p>
+                <h2 className="display-h1">{work.storyTitle}</h2>
                 <div>
-                  <h3>{step.title}</h3>
-                  <p>{step.copy}</p>
+                  <span>01</span>
+                  <p>{work.storyCopy}</p>
                 </div>
-              </li>
-            ))}
-          </ol>
-        </section>
+              </div>
+              <figure>
+                <WorkImage work={work} alt={`${work.title} — ${uiCopy[locale].project.storyImage}`} loading="lazy" />
+              </figure>
+            </section>
+
+            <section className="case-roadmap">
+              <header>
+                <p>{uiCopy[locale].project.roadmapEyebrow}</p>
+                <h2 className="display-h1">{uiCopy[locale].project.roadmapTitle}</h2>
+              </header>
+              <ol>
+                {work.roadmap.map((step, stepIndex) => (
+                  <li key={step.title}>
+                    <div className="roadmap-marker">
+                      <span>0{stepIndex + 1}</span>
+                      <i aria-hidden="true" />
+                    </div>
+                    <div>
+                      <h3>{step.title}</h3>
+                      <p>{step.copy}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          </>
+        )}
 
         <footer className="next-project">
           <p>{uiCopy[locale].project.next}</p>
