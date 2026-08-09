@@ -159,8 +159,8 @@ const workDefinitions: WorkDefinition[] = [
     title: text("Sustain & Mitigation\nAI-Platform", "ИИ-платформа устойчивого развития"),
     mobileTitle: text("Sustain & Mitigation\nAI-Platform", "ИИ-платформа\nустойчивого развития"),
     tags: {
-      en: ["MSP", "AI", "Compliance"],
-      ru: ["MSP", "ИИ", "Комплаенс"],
+      en: ["Grant-oriented product", "Compliance", "End-to-End"],
+      ru: ["Грантовый продукт", "Комплаенс", "End-to-End"],
     },
     impact: [
       { value: "86", label: text("Sustainability indicators made operational", "Показателей устойчивости, превращённых в рабочую систему") },
@@ -1550,6 +1550,143 @@ const smartTargetsKeyDecisionTwoSuccessRows = [
   ["Critical analytical tasks completed", "6/6"],
 ];
 
+const mitigationAssets = {
+  projectCore: "/portfolio/mitigation/project-core.png",
+  indicatorModel: "/portfolio/mitigation/indicator-model.png",
+  categoryModel: "/portfolio/mitigation/category-model.png",
+  dataModel: "/portfolio/mitigation/data-model.png",
+  linearCagr: "/portfolio/mitigation/linear-cagr.png",
+  sustainabilityMatrix: "/portfolio/mitigation/sustainability-matrix.png",
+  forecastModule: "/portfolio/mitigation/forecast-module.png",
+  questionnaire: "/portfolio/mitigation/questionnaire.png",
+  expertNetwork: "/portfolio/mitigation/expert-network.png",
+  formulaCagrGrowth: "/portfolio/mitigation/formula-cagr-growth.svg",
+  formulaCagrPredict: "/portfolio/mitigation/formula-cagr-predict.svg",
+  formulaLinearFallback: "/portfolio/mitigation/formula-linear-fallback.svg",
+  formulaCo2Total: "/portfolio/mitigation/formula-co2-total.svg",
+};
+
+const mitigationImpact: CaseMetric[] = [
+  { value: "86", label: text("Sustainability indicators mapped", "Показателей устойчивости сопоставлены") },
+  { value: "20", label: text("MVP priorities", "Приоритетов для MVP") },
+  { value: "6", label: text("Analytical modules in one workspace", "Аналитических модулей в одном пространстве") },
+  { value: "1", label: text("Grant-ready business & technical case", "Готовый грантовый бизнес- и технический кейс") },
+];
+
+const mitigationFinalImpact: CaseMetric[] = [
+  { value: "0→1", label: text("Product hypothesis", "Продуктовая гипотеза") },
+  { value: "4", label: text("Connected modules", "Связанных модуля") },
+  { value: "12 mo", label: text("Research & Dev Roadmap", "Дорожная карта R&D") },
+  { value: "1", label: text("Grant-ready business & technical case", "Готовый грантовый бизнес- и технический кейс") },
+];
+
+const mitigationRoleRows = [
+  {
+    label: text("Responsibility", "Ответственность"),
+    body: text(
+      "end-to-end product design from discovery to MVP;\nuser scenario generation;\ndefined product strategy and information architecture;\ninteractive prototypes;\nvisual system;\ncomponents and states;\ndevelopment of financial models.",
+      "end-to-end продуктовый дизайн от discovery до MVP;\nгенерация пользовательских сценариев;\nпродуктовая стратегия и информационная архитектура;\nинтерактивные прототипы;\nвизуальная система;\nкомпоненты и состояния;\nфинансовые модели.",
+    ),
+  },
+  {
+    label: text("In Team", "В команде"),
+    body: text(
+      "Identifying technical limitations;\nMultifactor data processing logic;\nScoring by metrics;\nMVP prioritization.",
+      "Выявление технических ограничений;\nмногофакторная логика обработки данных;\nскоринг по метрикам;\nприоритизация MVP.",
+    ),
+  },
+];
+
+const mitigationMetaRows = [
+  { label: text("Scope", "Зона"), value: text("Domain Analysis, Product Strategy, UX, UI, Business Model", "Domain Analysis, Product Strategy, UX, UI, Business Model") },
+  { label: text("Team", "Команда"), value: text("Analytics, Automation, Engineering, Domain Experts", "Analytics, Automation, Engineering, Domain Experts") },
+  { label: text("Duration", "Длительность"), value: text("6 months", "6 месяцев") },
+  { label: text("Stage", "Этап"), value: text("0 > 1", "0 > 1") },
+];
+
+const mitigationAbout = {
+  eyebrow: text("About", "О кейсе"),
+  title: text("Compliance is a traceability problem.", "Комплаенс - это проблема прослеживаемости."),
+  copy: text(
+    "The practice of public non-financial reporting has been developing globally for over 20 years. Most multinational and large national companies, as well as a number of government and municipal organizations worldwide, publish non-financial reports. Approximately 90 percent of Fortune Global 500 and S&P 500 companies publish regular reports.\n\nThe system under development was created to centralize and process complex regulatory requirements and ERP data in a single digital system using extrapolation analytics, CAGR forecasting, and artificial intelligence.\n\nThe platform addresses the following areas:\n- СОКБ / ЭКГ metric management and reporting,\n- compliance with industry and supranational regulations,\n- supply chain monitoring and analysis,\n- risk and non-compliance identification,\n- reporting and audit automation.",
+    "Практика публичной нефинансовой отчетности развивается в мире более 20 лет. Большинство транснациональных и крупных национальных компаний, а также ряд государственных и муниципальных организаций публикуют нефинансовую отчетность.\n\nРазрабатываемая система централизует сложные регуляторные требования и ERP-данные в единой цифровой системе с экстраполяционной аналитикой, CAGR-прогнозированием и искусственным интеллектом.\n\nПлатформа покрывает следующие направления:\n- управление и отчетность по метрикам СОКБ / ЭКГ,\n- соответствие отраслевым и наднациональным требованиям,\n- мониторинг и анализ цепочек поставок,\n- выявление рисков и несоответствий,\n- автоматизация отчетности и аудита.",
+  ),
+};
+
+const mitigationProjectCore = {
+  eyebrow: text("Project Core", "Project Core"),
+  title: text("From a strategic priority to a grant-ready product", "От стратегического приоритета к грантовому продукту"),
+  copy: text(
+    "Russia's sanctions pressure has shifted its strategic priorities, displacing universal global business valuation models like ESG.\n\nIn response, a nationally focused business valuation methodology was developed, based on 86 responsible business practice indicators.\n\nAt the time of developing the product hypothesis, the value of individual indicators was manually calculated using ERP system data, supporting documents, publicly available information, and expert assessment.\n\nThe product being developed preserves this chain without overburdening the organization with the complexity of the underlying processes - it automates data collection via customizable APIs, calculates indicators, and forecasts sustainable business growth linearly and at a CAGR rate.",
+    "Санкционное давление изменило стратегические приоритеты и сместило универсальные модели оценки бизнеса вроде ESG.\n\nВ ответ была разработана национально ориентированная методология оценки бизнеса на базе 86 показателей ответственной деловой практики.\n\nНа этапе продуктовой гипотезы значения отдельных показателей рассчитывались вручную по ERP-данным, подтверждающим документам, публичной информации и экспертной оценке.\n\nРазрабатываемый продукт сохраняет эту цепочку, но снимает с организации сложность процессов: автоматизирует сбор данных через настраиваемые API, рассчитывает показатели и прогнозирует устойчивый рост линейно и по CAGR.",
+  ),
+  points: [
+    {
+      number: "01",
+      eyebrow: text("Challenge", "Challenge"),
+      copy: text(
+        "Transform the new sustainable development methodology into a trustworthy digital product useful for both business and government.",
+        "Преобразовать новую методологию устойчивого развития в надежный цифровой продукт для бизнеса и государства.",
+      ),
+    },
+    {
+      number: "02",
+      eyebrow: text("My Contribution", "My Contribution"),
+      copy: text(
+        "I developed a product hypothesis, conducted a subject area and market analysis, prepared a complete mathematical model for calculating 86 indicators and linear/CAGR formulas for their short-term forecasting, developed a UX architecture, an interactive prototype, a business plan, and a financial model.",
+        "Я разработал продуктовую гипотезу, провел анализ предметной области и рынка, подготовил математическую модель расчета 86 показателей и формулы линейного/CAGR-прогноза, UX-архитектуру, интерактивный прототип, бизнес-план и финансовую модель.",
+      ),
+    },
+    {
+      number: "03",
+      eyebrow: text("Delivered", "Delivered"),
+      copy: text(
+        "A grant-ready R&D case connecting product logic, business viability and a 12-month development roadmap.",
+        "Готовый к грантовой подаче R&D-кейс, связывающий продуктовую логику, бизнес-жизнеспособность и 12-месячную дорожную карту.",
+      ),
+    },
+  ],
+};
+
+const mitigationMarketRows = [
+  { number: "01", label: "Foreign Tools", copy: text("No native СОКБ / ЭКГ model\nComplex implementation", "Нет нативной модели СОКБ / ЭКГ\nСложное внедрение") },
+  { number: "02", label: "Local Tools", copy: text("Just reporting or consulting tools\nFragmented manual workflows\nNo unified evidence chain", "Только отчетность или консалтинг\nФрагментированные ручные процессы\nНет единой цепочки доказательств") },
+  { number: "03", label: "Product Opportunity", copy: text("Russian-first methodology;\nMulti-company architecture;\nData → Evidence → Score → Forecast", "Методология, ориентированная на российский контекст;\nмультикомпанейская архитектура;\nданные → доказательства → рейтинг → прогноз") },
+];
+
+const mitigationDiscoveryRows = [
+  { number: "01", label: "Scattered evidence", copy: text("KPI inputs were distributed across systems, files and departments.", "Входные данные KPI были распределены по системам, файлам и подразделениям.") },
+  { number: "02", label: "Different confidence", copy: text("Imported, calculated and expert-verified values could not look identical.", "Импортированные, рассчитанные и экспертно подтвержденные значения не могли выглядеть одинаково.") },
+  { number: "03", label: "One evolving standard", copy: text("The product had to scale from the core list of indicators to future modifications or additions.", "Продукт должен был масштабироваться от базового списка показателей к будущим изменениям и дополнениям.") },
+];
+
+const mitigationDomainRows = [
+  { number: "01", label: "Model The Standard", copy: text("86 indicators classified by category, data source, 1C module, priority and implementation complexity.", "86 показателей классифицированы по категории, источнику данных, модулю 1C, приоритету и сложности внедрения.") },
+  { number: "02", label: "Prioritize the MVP", copy: text("A 20-item MVP shortlist selected from the complete standard.", "Из полного стандарта выбран MVP-список из 20 элементов.") },
+  { number: "03", label: "Specify The Data Contract", copy: text("Each indicator defined by unit, period, source, evidence, input UI, formula, forecast rule and automation level.", "Для каждого показателя определены единица, период, источник, доказательства, input UI, формула, правило прогноза и уровень автоматизации.") },
+];
+
+const mitigationForecastRows = [
+  { number: "01", label: "Additive Metrics", copy: text("CAGR (Compound Annual Growth Rate)\nLinear fallback", "CAGR (Compound Annual Growth Rate)\nЛинейный fallback") },
+  { number: "02", label: "Ratios / Shares", copy: text("Linear trend\nClip to valid range", "Линейный тренд\nОграничение допустимым диапазоном") },
+  { number: "03", label: "Boolean Metrics", copy: text("Carry the last verified value", "Перенос последнего подтвержденного значения") },
+  { number: "04", label: "Composite Metrics", copy: text("Forecast components\nRecalculate total", "Прогноз компонентов\nПерерасчет итогового значения") },
+];
+
+const mitigationBusinessVisuals = [
+  { label: text("Sustainability Matrix", "Sustainability Matrix"), image: mitigationAssets.sustainabilityMatrix },
+  { label: text("AI-Based Forecast Module", "AI-Based Forecast Module"), image: mitigationAssets.forecastModule },
+  { label: text("СОКБ Questionnaire", "СОКБ Questionnaire"), image: mitigationAssets.questionnaire },
+  { label: text("Expert Network", "Expert Network"), image: mitigationAssets.expertNetwork },
+];
+
+const mitigationPersonalImpact = [
+  text("Translated a national standard into UX and data logic", "Перевел национальный стандарт в UX и логику данных"),
+  text("Classified indicators by source, priority, complexity and 1C readiness", "Классифицировал показатели по источнику, приоритету, сложности и готовности к 1C"),
+  text("Defined formulas, forecast behavior and evidence requirements", "Определил формулы, поведение прогнозов и требования к доказательствам"),
+  text("Built the business plan, financial model and 12-month R&D roadmap", "Собрал бизнес-план, финансовую модель и 12-месячную R&D-дорожную карту"),
+];
+
 function SmartTargetsTable({ rows, className = "" }: { rows: string[][]; className?: string }) {
   return (
     <div className={`smart-case-table ${className}`.trim()} style={{ "--columns": rows[0]?.length ?? 2 } as React.CSSProperties}>
@@ -1575,7 +1712,7 @@ function SmartTargetsRichCopy({ text, emphasis }: { text: string; emphasis?: str
 
 function CaseSection({ block, locale, children }: { block: CaseTextBlock; locale: Locale; children?: React.ReactNode }) {
   return (
-    <section className="smart-case-section">
+    <section className="smart-case-section smart-case-module smart-case-module-split">
       <p className="smart-case-eyebrow">{block.eyebrow[locale]}</p>
       <h2>{block.title[locale]}</h2>
       {block.copy && <p className="smart-case-copy">{block.copy[locale]}</p>}
@@ -1646,7 +1783,7 @@ function SmartTargetsPhones({
 
 function CaseProjectCore({ locale }: { locale: Locale }) {
   return (
-    <section className="smart-case-project-core">
+    <section className="smart-case-project-core smart-case-module smart-case-module-media-split">
       <figure className="smart-case-project-core-media">
         <img src={smartTargetsAssets.projectCoreFigma} alt="" loading="lazy" />
       </figure>
@@ -1674,7 +1811,7 @@ function CaseProjectCore({ locale }: { locale: Locale }) {
 
 function CaseDiscovery({ locale }: { locale: Locale }) {
   return (
-    <section className="smart-case-discovery">
+    <section className="smart-case-discovery smart-case-module smart-case-module-feature">
       <header className="smart-case-discovery-intro">
         <p className="smart-case-eyebrow">{smartTargetsDiscovery.eyebrow[locale]}</p>
         <h2>{smartTargetsDiscovery.title[locale]}</h2>
@@ -1709,7 +1846,7 @@ function CaseDiscovery({ locale }: { locale: Locale }) {
 
 function CaseKeyDecisionOne({ locale }: { locale: Locale }) {
   return (
-    <section className="smart-case-key-decision">
+    <section className="smart-case-key-decision smart-case-module smart-case-module-narrative">
       <header className="smart-case-key-decision-intro">
         <p className="smart-case-eyebrow">{smartTargetsKeyDecisionOne.eyebrow[locale]}</p>
         <h2>{smartTargetsKeyDecisionOne.title[locale]}</h2>
@@ -1725,7 +1862,7 @@ function CaseKeyDecisionOne({ locale }: { locale: Locale }) {
         ))}
       </div>
 
-      <section className="smart-case-validation">
+      <section className="smart-case-validation smart-case-module-block smart-case-module-split">
         <header>
           <h3>{smartTargetsKeyDecisionValidation.title[locale]}</h3>
           <p>{smartTargetsKeyDecisionValidation.copy[locale]}</p>
@@ -1759,7 +1896,7 @@ function CaseKeyDecisionOne({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section className="smart-case-field-research">
+      <section className="smart-case-field-research smart-case-module-block smart-case-module-split">
         <header>
           <p className="smart-case-eyebrow">{locale === "ru" ? "Field Research" : "Field Research"}</p>
           <h3>{locale === "ru" ? "Stages Version 1 & Version 2" : "Stages Version 1 & Version 2"}</h3>
@@ -1816,7 +1953,7 @@ function CaseKeyDecisionOne({ locale }: { locale: Locale }) {
         ))}
       </div>
 
-      <section className="smart-case-effect smart-case-key-effect">
+      <section className="smart-case-effect smart-case-key-effect smart-case-module-block smart-case-module-callout">
         <p className="smart-case-eyebrow">{locale === "ru" ? "Effect" : "Effect"}</p>
         <strong>-57%</strong>
         <h2>{locale === "ru" ? "Task Completion Time" : "Task Completion Time"}</h2>
@@ -1832,7 +1969,7 @@ function CaseKeyDecisionOne({ locale }: { locale: Locale }) {
 
 function CaseKeyDecisionTwo({ locale }: { locale: Locale }) {
   return (
-    <section className="smart-case-key-decision smart-case-key-decision-two">
+    <section className="smart-case-key-decision smart-case-key-decision-two smart-case-module smart-case-module-narrative">
       <header className="smart-case-key-decision-intro">
         <p className="smart-case-eyebrow">{smartTargetsKeyDecisionTwo.eyebrow[locale]}</p>
         <h2>{smartTargetsKeyDecisionTwo.title[locale]}</h2>
@@ -1865,7 +2002,7 @@ function CaseKeyDecisionTwo({ locale }: { locale: Locale }) {
         </div>
       </div>
 
-      <section className="smart-case-field-research">
+      <section className="smart-case-field-research smart-case-module-block smart-case-module-split">
         <header>
           <p className="smart-case-eyebrow">{locale === "ru" ? "Field Research" : "Field Research"}</p>
           <h3>{locale === "ru" ? "Stages" : "Stages"}</h3>
@@ -1901,7 +2038,7 @@ function CaseKeyDecisionTwo({ locale }: { locale: Locale }) {
         ))}
       </div>
 
-      <section className="smart-case-validation smart-case-concept-validation">
+      <section className="smart-case-validation smart-case-concept-validation smart-case-module-block smart-case-module-split">
         <header>
           <p className="smart-case-eyebrow">{smartTargetsKeyDecisionTwoValidation.title[locale]}</p>
           <h3>{smartTargetsKeyDecisionTwoValidation.subtitle[locale]}</h3>
@@ -1915,7 +2052,7 @@ function CaseKeyDecisionTwo({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section className="smart-case-field-research smart-case-validation-result">
+      <section className="smart-case-field-research smart-case-validation-result smart-case-module-block smart-case-module-split">
         <div className="smart-case-row smart-case-ux-decision">
           <span>{smartTargetsKeyDecisionTwoValidationTasks.label[locale]}</span>
           <div>
@@ -1931,7 +2068,7 @@ function CaseKeyDecisionTwo({ locale }: { locale: Locale }) {
         <SmartTargetsTable rows={smartTargetsKeyDecisionTwoSuccessRows} />
       </section>
 
-      <section className="smart-case-effect smart-case-key-effect">
+      <section className="smart-case-effect smart-case-key-effect smart-case-module-block smart-case-module-callout">
         <p className="smart-case-eyebrow">{locale === "ru" ? "Effect" : "Effect"}</p>
         <strong>4/4</strong>
         <h2>{locale === "ru" ? "Shooters turned training data into an actionable insight" : "Shooters turned training data into an actionable insight"}</h2>
@@ -1947,7 +2084,7 @@ function CaseKeyDecisionTwo({ locale }: { locale: Locale }) {
 
 function CaseOutcome({ locale }: { locale: Locale }) {
   return (
-    <section className="smart-case-outcome">
+    <section className="smart-case-outcome smart-case-module smart-case-module-finale">
       <figure className="smart-case-outcome-hero">
         <img src={smartTargetsAssets.outcomeHero} alt="" loading="lazy" />
       </figure>
@@ -1971,7 +2108,7 @@ function CaseOutcome({ locale }: { locale: Locale }) {
         <p className="smart-case-copy">{smartTargetsReflection.copy[locale]}</p>
       </section>
 
-      <section className="smart-case-final">
+      <section className="smart-case-final smart-case-module-block smart-case-module-callout">
         <figure className="smart-case-final-art">
           <img src={smartTargetsAssets.outcomeFinalGraphic} alt="" loading="lazy" />
         </figure>
@@ -2003,7 +2140,7 @@ function SmartTargetsCaseContent({ locale }: { locale: Locale }) {
         }}
       />
 
-      <section className="smart-case-impact">
+      <section className="smart-case-impact smart-case-module smart-case-module-metrics">
         <header>
           <p className="smart-case-eyebrow">{locale === "ru" ? "Результат" : "Outcome"}</p>
           <h2>{locale === "ru" ? "Selected Impact" : "Selected Impact"}</h2>
@@ -2011,7 +2148,7 @@ function SmartTargetsCaseContent({ locale }: { locale: Locale }) {
         <CaseMetricGrid metrics={smartTargetsImpact} locale={locale} />
       </section>
 
-      <section className="smart-case-role">
+      <section className="smart-case-role smart-case-module smart-case-module-split">
         <header>
           <p className="smart-case-eyebrow">{locale === "ru" ? "Роль" : "Role"}</p>
           <h2>{locale === "ru" ? "Lead Product Designer" : "Lead Product Designer"}</h2>
@@ -2044,6 +2181,297 @@ function SmartTargetsCaseContent({ locale }: { locale: Locale }) {
 
       <CaseOutcome locale={locale} />
 
+    </div>
+  );
+}
+
+function MitigationRows({
+  rows,
+  locale,
+  className = "",
+}: {
+  rows: Array<{ number: string; label: string; copy: LocalizedText }>;
+  locale: Locale;
+  className?: string;
+}) {
+  return (
+    <div className={`smart-case-row-list mitigation-rows ${className}`.trim()}>
+      {rows.map((row) => (
+        <div className="smart-case-row" key={`${row.number}-${row.label}`}>
+          <span>{row.number}</span>
+          <div>
+            <p className="smart-case-pill">{row.label}</p>
+            <p>{row.copy[locale]}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function MitigationVisualFigure({ label, image, locale }: { label: LocalizedText; image: string; locale: Locale }) {
+  return (
+    <figure>
+      <figcaption>{label[locale]}</figcaption>
+      <img src={image} alt="" loading="lazy" />
+    </figure>
+  );
+}
+
+function MitigationProjectCore({ locale }: { locale: Locale }) {
+  return (
+    <section className="smart-case-project-core mitigation-project-core smart-case-module smart-case-module-media-split">
+      <figure className="smart-case-project-core-media">
+        <img src={mitigationAssets.projectCore} alt="" loading="lazy" />
+      </figure>
+
+      <header className="smart-case-project-core-intro">
+        <p className="smart-case-eyebrow">{mitigationProjectCore.eyebrow[locale]}</p>
+        <h2>{mitigationProjectCore.title[locale]}</h2>
+        <p>{mitigationProjectCore.copy[locale]}</p>
+      </header>
+
+      <div className="smart-case-project-core-list">
+        {mitigationProjectCore.points.map((point) => (
+          <article key={point.number}>
+            <div>
+              <p className="smart-case-eyebrow">{point.eyebrow[locale]}</p>
+              <p>{point.copy[locale]}</p>
+            </div>
+            <strong>{point.number}</strong>
+          </article>
+        ))}
+      </div>
+
+      <section className="smart-case-field-research mitigation-market">
+        <header>
+          <p className="smart-case-eyebrow">Market / Business</p>
+          <h3>{locale === "ru" ? "Разрыв был между отчетностью и операционным управлением." : "The gap was between reporting and operating."}</h3>
+        </header>
+        <MitigationRows rows={mitigationMarketRows} locale={locale} />
+        <div className="mitigation-pill-rows">
+          <div>
+            <span>Business model / target Clients</span>
+            <div>
+              <p className="smart-case-pill">Mid-size Business</p>
+              <p className="smart-case-pill">Enterprise</p>
+              <p className="smart-case-pill">Holdings</p>
+            </div>
+          </div>
+          <div>
+            <span>Revenue</span>
+            <div>
+              <p className="smart-case-pill">SaaS subscription</p>
+              <p className="smart-case-pill">Implementation</p>
+              <p className="smart-case-pill">Expert Services</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  );
+}
+
+function MitigationDiscovery({ locale }: { locale: Locale }) {
+  return (
+    <section className="smart-case-key-decision mitigation-discovery smart-case-module smart-case-module-narrative">
+      <header className="smart-case-key-decision-intro">
+        <p className="smart-case-eyebrow">Problem Definition</p>
+        <h2>{locale === "ru" ? "Как превратить новую национальную методологию в проверяемый продукт, которым бизнес действительно может управлять?" : "How might we turn a new national methodology into an auditable product that businesses can actually operate?"}</h2>
+        <div className="mitigation-inline-pills">
+          {["Normative", "Testable", "Role-Aware", "Scalable"].map((item) => (
+            <span className="smart-case-pill" key={item}>{item}</span>
+          ))}
+        </div>
+      </header>
+
+      <section className="smart-case-field-research smart-case-module-block smart-case-module-split">
+        <header>
+          <p className="smart-case-eyebrow">Discovery</p>
+          <h3>{locale === "ru" ? "Что должна была связать платформа?" : "What the platform needed to connect?"}</h3>
+        </header>
+        <MitigationRows rows={mitigationDiscoveryRows} locale={locale} />
+      </section>
+
+      <div className="smart-case-key-visuals mitigation-visual-stack">
+        <MitigationVisualFigure label={text("Indicator Calculation Model", "Indicator Calculation Model")} image={mitigationAssets.indicatorModel} locale={locale} />
+        <MitigationVisualFigure label={text("Separating Categories of Indicators", "Separating Categories of Indicators")} image={mitigationAssets.categoryModel} locale={locale} />
+      </div>
+
+      <section className="smart-case-effect smart-case-key-effect smart-case-module-block smart-case-module-callout">
+        <p className="smart-case-eyebrow">Product Principle #1</p>
+        <h2>{locale === "ru" ? "Метрика не могла быть просто полем. Ей были нужны источник, доказательство, правило расчета и состояние валидации." : "A metric could not be just a field. It needed a source, proof, calculation rule and validation state."}</h2>
+        <div className="smart-case-pills">
+          {["People & Health", "Ecology", "Human Potential", "Economy"].map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </div>
+      </section>
+
+      <section className="smart-case-field-research smart-case-module-block smart-case-module-split">
+        <header>
+          <p className="smart-case-eyebrow">Domain Analysis</p>
+          <h3>{locale === "ru" ? "Я превратил 86 регуляторных показателей в продуктовый backlog." : "I turned 86 regulatory indicators into a buildable product backlog."}</h3>
+        </header>
+        <MitigationRows rows={mitigationDomainRows} locale={locale} />
+      </section>
+
+      <div className="smart-case-key-visuals mitigation-visual-stack">
+        <MitigationVisualFigure label={text("Detailed Data Model", "Detailed Data Model")} image={mitigationAssets.dataModel} locale={locale} />
+        <MitigationVisualFigure label={text("Linear & CAGR Formulas", "Linear & CAGR Formulas")} image={mitigationAssets.linearCagr} locale={locale} />
+      </div>
+    </section>
+  );
+}
+
+function MitigationBusiness({ locale }: { locale: Locale }) {
+  return (
+    <section className="smart-case-key-decision mitigation-business smart-case-module smart-case-module-narrative">
+      <section className="smart-case-effect smart-case-key-effect smart-case-module-block smart-case-module-callout">
+        <p className="smart-case-eyebrow">Product Principle #2</p>
+        <h2>{locale === "ru" ? "Стандарт становится продуктом только тогда, когда у каждого требования есть данные, логика, владелец и интерфейс." : "A standard becomes a product only when every requirement has data, logic, ownership and an interface."}</h2>
+      </section>
+
+      <div className="smart-case-key-visuals mitigation-business-visuals">
+        {mitigationBusinessVisuals.map((visual) => (
+          <MitigationVisualFigure key={visual.image} label={visual.label} image={visual.image} locale={locale} />
+        ))}
+      </div>
+
+      <section className="smart-case-effect smart-case-key-effect smart-case-module-block smart-case-module-callout">
+        <p className="smart-case-eyebrow">Product Hypothesis</p>
+        <h2>{locale === "ru" ? "Если каждый рейтинг можно проследить до данных и доказательств, комплаенс становится повторяемым процессом управления, а не ежегодным документом." : "If every score can be traced back to data and evidence, compliance becomes a repeatable management process, not a yearly document exercise."}</h2>
+      </section>
+    </section>
+  );
+}
+
+function MitigationCalculationModel({ locale }: { locale: Locale }) {
+  return (
+    <section className="smart-case-key-decision mitigation-calculation smart-case-module smart-case-module-narrative">
+      <section className="smart-case-field-research smart-case-module-block smart-case-module-split">
+        <header>
+          <p className="smart-case-eyebrow">Forecast Calculation Model</p>
+          <h3>{locale === "ru" ? "Разным метрикам было нужно разное поведение прогноза." : "Different metrics needed different forecast behavior."}</h3>
+        </header>
+        <MitigationRows rows={mitigationForecastRows} locale={locale} />
+      </section>
+
+      <section className="mitigation-formula-card smart-case-module-block">
+        <header>
+          <p className="smart-case-eyebrow">Calculation Model</p>
+          <h3>Formulas</h3>
+        </header>
+        <div className="mitigation-formulas">
+          <article>
+            <span>CAGR Predict</span>
+            <div className="mitigation-formula-stack">
+              <img src={mitigationAssets.formulaCagrGrowth} alt="CAGR growth formula" loading="lazy" />
+              <img src={mitigationAssets.formulaCagrPredict} alt="CAGR prediction formula" loading="lazy" />
+            </div>
+          </article>
+          <article>
+            <span>Linear Fallback</span>
+            <img src={mitigationAssets.formulaLinearFallback} alt="Linear fallback formula" loading="lazy" />
+          </article>
+          <article>
+            <span>CO2 Calculation example</span>
+            <img src={mitigationAssets.formulaCo2Total} alt="CO2 total formula" loading="lazy" />
+          </article>
+        </div>
+        <dl>
+          <div><dt>Xᵧ</dt><dd>value of the indicator in the current year;</dd></div>
+          <div><dt>Xᵧ₋₃</dt><dd>value three years ago;</dd></div>
+          <div><dt>g</dt><dd>compound annual growth rate (CAGR);</dd></div>
+          <div><dt>h</dt><dd>forecast horizon in years;</dd></div>
+          <div><dt>X̂ᵧ₊ₕ</dt><dd>forecast value;</dd></div>
+          <div><dt>G₁ + G₂</dt><dd>the sum of direct and indirect CO₂ emissions.</dd></div>
+        </dl>
+      </section>
+    </section>
+  );
+}
+
+function MitigationOutcome({ locale }: { locale: Locale }) {
+  return (
+    <section className="smart-case-outcome mitigation-outcome smart-case-module smart-case-module-finale">
+      <section className="smart-case-outcome-section">
+        <p className="smart-case-eyebrow">Outcome / Reflection</p>
+        <h2>{locale === "ru" ? "Я спроектировал и продукт, и аргументацию того, почему он должен существовать." : "I designed both the product and the case for why it should exist."}</h2>
+      </section>
+
+      <section className="smart-case-impact smart-case-module smart-case-module-metrics">
+        <header>
+          <p className="smart-case-eyebrow">Project Output</p>
+          <h2>{locale === "ru" ? "Project Output" : "Project Output"}</h2>
+        </header>
+        <CaseMetricGrid metrics={mitigationFinalImpact} locale={locale} />
+      </section>
+
+      <section className="smart-case-validation-panel mitigation-personal-impact smart-case-module-block">
+        <div className="smart-case-validation-panel-head">
+          <p className="smart-case-eyebrow">Personal Impact</p>
+        </div>
+        <div className="mitigation-impact-list">
+          {mitigationPersonalImpact.map((item) => (
+            <p key={item.en}>{item[locale]}</p>
+          ))}
+        </div>
+      </section>
+
+      <section className="smart-case-outcome-section">
+        <p className="smart-case-eyebrow">Outcome / Reflection</p>
+        <p className="smart-case-copy">
+          {locale === "ru"
+            ? "На ранней стадии продуктовый дизайн - это не производство экранов.\n\nЭто работа по превращению неопределенной системы в то, что можно проверить, профинансировать и построить."
+            : "At an early stage, product design is not screen production.\n\nIt is the work of making an uncertain system testable, fundable and buildable."}
+        </p>
+      </section>
+    </section>
+  );
+}
+
+function MitigationCaseContent({ locale }: { locale: Locale }) {
+  return (
+    <div className="smart-case mitigation-case">
+      <CaseSection locale={locale} block={mitigationAbout} />
+
+      <section className="smart-case-impact smart-case-module smart-case-module-metrics">
+        <header>
+          <p className="smart-case-eyebrow">{locale === "ru" ? "Результат" : "Outcome"}</p>
+          <h2>{locale === "ru" ? "Selected Impact" : "Selected Impact"}</h2>
+        </header>
+        <CaseMetricGrid metrics={mitigationImpact} locale={locale} />
+      </section>
+
+      <section className="smart-case-role smart-case-module smart-case-module-split">
+        <header>
+          <p className="smart-case-eyebrow">{locale === "ru" ? "Роль" : "Role"}</p>
+          <h2>{locale === "ru" ? "Lead Product Designer" : "Lead Product Designer"}</h2>
+        </header>
+        <div className="smart-case-row-list">
+          {mitigationRoleRows.map((row) => (
+            <div className="smart-case-row" key={row.label.en}>
+              <span>{row.label[locale]}</span>
+              <p>{row.body[locale]}</p>
+            </div>
+          ))}
+        </div>
+        <div className="smart-case-meta">
+          {mitigationMetaRows.map((row) => (
+            <div key={row.label.en}>
+              <span>{row.label[locale]}</span>
+              <strong>{row.value[locale]}</strong>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <MitigationProjectCore locale={locale} />
+      <MitigationDiscovery locale={locale} />
+      <MitigationBusiness locale={locale} />
+      <MitigationCalculationModel locale={locale} />
+      <MitigationOutcome locale={locale} />
     </div>
   );
 }
@@ -2121,6 +2549,7 @@ function ProjectModal({
     active: boolean;
   } | null>(null);
   const isSmartTargets = index === 1;
+  const isMitigation = index === 4;
 
   useEffect(() => {
     if (!expanded) return;
@@ -2147,6 +2576,48 @@ function ProjectModal({
   useEffect(() => {
     if (expanded) modalRef.current?.scrollTo({ top: 0 });
   }, [expanded, index]);
+
+  useEffect(() => {
+    const modal = modalRef.current;
+    if (!expanded || !isSmartTargets || !modal) return;
+
+    const revealSelector = [
+      ".smart-case > .smart-case-section:first-child",
+    ].join(",");
+    const targets = Array.from(modal.querySelectorAll<HTMLElement>(revealSelector));
+    const targetSet = new Set(targets);
+
+    modal.querySelectorAll<HTMLElement>(".smart-case .smart-reveal").forEach((target) => {
+      if (targetSet.has(target)) return;
+      target.classList.remove("smart-reveal", "smart-reveal-media", "is-visible");
+      target.style.removeProperty("--smart-reveal-delay");
+    });
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      targets.forEach((target) => target.classList.add("smart-reveal", "is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { root: modal, rootMargin: "0px 0px -12% 0px", threshold: 0.08 },
+    );
+
+    targets.forEach((target, targetIndex) => {
+      target.classList.add("smart-reveal");
+      target.style.setProperty("--smart-reveal-delay", `${Math.min(targetIndex % 4, 3) * 45}ms`);
+      observer.observe(target);
+    });
+
+    return () => observer.disconnect();
+  }, [expanded, index, isSmartTargets]);
 
   const requestClose = () => {
     if (closingRef.current) return;
@@ -2286,6 +2757,8 @@ function ProjectModal({
 
         {isSmartTargets ? (
           <SmartTargetsCaseContent locale={locale} />
+        ) : isMitigation ? (
+          <MitigationCaseContent locale={locale} />
         ) : (
           <>
             <section className="selected-impact">
